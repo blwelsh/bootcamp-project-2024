@@ -1,15 +1,5 @@
 // Blog Type and Data
-
-type Blog = {
-    title: string;
-    date: string;
-    description: string;
-    image: string;
-    imageAlt: string;
-    slug: string;
-}
-
-const myBlogs: Blog[] = [
+var myBlogs = [
     {
         title: "My First Blog Post",
         date: "10/15/2024",
@@ -27,30 +17,19 @@ const myBlogs: Blog[] = [
         slug: "adventures-in-typescript"
     }
 ];
-
 // Get blog-container class from blog.html
-
-const blogContainer = document.getElementById('blog-container');
-
-myBlogs.forEach(blog => {
-    const newBlogDiv = document.createElement("div");
-    
-    const blogHeader = document.createElement("h1");
+var blogContainer = document.getElementById('blog-container');
+myBlogs.forEach(function (blog) {
+    var newBlogDiv = document.createElement("div");
+    var blogHeader = document.createElement("h1");
     blogHeader.innerHTML = blog.title;
     newBlogDiv.append(blogHeader);
-
-
-    const blogImg = document.createElement("img");
+    var blogImg = document.createElement("img");
     blogImg.src = blog.image;
     blogImg.alt = blog.imageAlt;
     newBlogDiv.append(blogImg);
-
-
-    const blogDesc = document.createElement("p");
+    var blogDesc = document.createElement("p");
     blogDesc.innerHTML = blog.description;
     newBlogDiv.append(blogDesc);
-
-
     document.body.insertBefore(newBlogDiv, blogContainer);
-
 });
