@@ -22,8 +22,11 @@ var blogContainer = document.getElementById('blog-container');
 myBlogs.forEach(function (blog) {
     var newBlogDiv = document.createElement("div");
     var blogHeader = document.createElement("h1");
+    var headerLink = document.createElement("a");
     blogHeader.innerHTML = blog.title;
-    newBlogDiv.append(blogHeader);
+    headerLink.href = "blogs/".concat(blog.slug, ".html");
+    headerLink.appendChild(blogHeader);
+    newBlogDiv.append(headerLink);
     var blogImg = document.createElement("img");
     blogImg.src = blog.image;
     blogImg.alt = blog.imageAlt;

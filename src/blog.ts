@@ -36,8 +36,11 @@ myBlogs.forEach(blog => {
     const newBlogDiv = document.createElement("div");
     
     const blogHeader = document.createElement("h1");
+    const headerLink = document.createElement("a");
     blogHeader.innerHTML = blog.title;
-    newBlogDiv.append(blogHeader);
+    headerLink.href = `blogs/${blog.slug}.html`;
+    headerLink.appendChild(blogHeader);
+    newBlogDiv.append(headerLink);
 
 
     const blogImg = document.createElement("img");
