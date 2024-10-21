@@ -15,7 +15,7 @@ const myBlogs: Blog[] = [
         date: "10/15/2024",
         description: "Brady's first ever blog post...",
         image: "brady-pic.jpg",
-        imageAlt: "a beautiful picture of []",
+        imageAlt: "brady",
         slug: "my-first-blog-post"
     },
     {
@@ -23,7 +23,7 @@ const myBlogs: Blog[] = [
         date: "10/15/2024",
         description: "A few skills I've gained while learning TS",
         image: "brady-pic.jpg",
-        imageAlt: "a beautiful picture of []",
+        imageAlt: "brady",
         slug: "adventures-in-typescript"
     }
 ];
