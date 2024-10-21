@@ -4,7 +4,7 @@ var myBlogs = [
         title: "My First Blog Post",
         date: "10/15/2024",
         description: "Brady's first ever blog post...",
-        image: "bootcamp-project-2024/brady-pic.jpg",
+        image: "brady-pic.jpg",
         imageAlt: "a beautiful picture of []",
         slug: "my-first-blog-post"
     },
@@ -12,7 +12,7 @@ var myBlogs = [
         title: "Adventures in TypeScript",
         date: "10/15/2024",
         description: "A few skills I've gained while learning TS",
-        image: "image1.jpg",
+        image: "brady-pic.jpg",
         imageAlt: "a beautiful picture of []",
         slug: "adventures-in-typescript"
     }
@@ -27,6 +27,7 @@ myBlogs.forEach(function (blog) {
     var blogImg = document.createElement("img");
     blogImg.src = blog.image;
     blogImg.alt = blog.imageAlt;
+    blogImg.style.width = "200px";
     newBlogDiv.append(blogImg);
     var blogDesc = document.createElement("p");
     blogDesc.innerHTML = blog.description;
