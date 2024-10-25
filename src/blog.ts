@@ -30,7 +30,8 @@ const myBlogs: Blog[] = [
 
 // Get blog-container class from blog.html
 
-const blogContainer = document.getElementById('blog-container');
+const blogContainer = document.getElementById("blog-container");
+console.log(blogContainer);
 
 myBlogs.forEach(blog => {
     const newBlogDiv = document.createElement("div");
@@ -55,6 +56,5 @@ myBlogs.forEach(blog => {
     newBlogDiv.append(blogDesc);
 
 
-    document.body.insertBefore(newBlogDiv, blogContainer);
-
+    if(blogContainer != null) blogContainer.appendChild(newBlogDiv);
 });

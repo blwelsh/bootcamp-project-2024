@@ -18,7 +18,8 @@ var myBlogs = [
     }
 ];
 // Get blog-container class from blog.html
-var blogContainer = document.getElementById('blog-container');
+var blogContainer = document.getElementById("blog-container");
+console.log(blogContainer);
 myBlogs.forEach(function (blog) {
     var newBlogDiv = document.createElement("div");
     var blogHeader = document.createElement("h1");
@@ -35,5 +36,6 @@ myBlogs.forEach(function (blog) {
     var blogDesc = document.createElement("p");
     blogDesc.innerHTML = blog.description;
     newBlogDiv.append(blogDesc);
-    document.body.insertBefore(newBlogDiv, blogContainer);
+    if (blogContainer != null)
+        blogContainer.appendChild(newBlogDiv);
 });
