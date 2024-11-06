@@ -29,3 +29,26 @@ h1.page-title {
 .section-title {
     border-bottom: solid 3px #191729;
 }
+
+
+/* About Image */
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    border-right: solid #191729 4px;
+  }
+   
+  
+  .about {
+    display: flex;
+    gap: 20px;
+    border: solid #191729 4px;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .about-text {
+    padding: 20px 20px 20px 0px;
+  }
+  
