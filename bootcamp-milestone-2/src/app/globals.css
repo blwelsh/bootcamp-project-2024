@@ -1,4 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html {
+    height: 100%;
+}
+  
+body {
+    background-color: #ffffff;
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvectica", "Arial", sans-serif;
+}
+  
+main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+h1.page-title {
+    color: #191729;
+    font-size: 45px;
+    border-bottom: solid #191729 4px;
+}
+
+
+.section-title {
+    border-bottom: solid 3px #191729;
+}

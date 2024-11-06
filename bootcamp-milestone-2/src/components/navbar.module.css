@@ -1,4 +1,3 @@
-
 /* CSS for navigation bar */
 
 .navbar {
@@ -22,7 +21,7 @@
     /* border: solid red; */
   }
   
-  .nav-list {
+  .navlist {
     display: flex;
     flex-direction: row;
     position: sticky;
@@ -30,16 +29,16 @@
     list-style: none;
   }
   
-  .navbar a {
+.navbar a {
     color: white;
     font-weight: bold;
     margin: 0 12px;
     text-decoration: none;
     letter-spacing: 2px;
-  }
+}
   
-  .navbar a:hover {
+.navbar a:hover {
     color: lightblue;
     border-bottom: solid white 2px;
     transition: color 0.5s, border 0.2s;
-  }
+}
