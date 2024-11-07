@@ -52,3 +52,45 @@ h1.page-title {
     padding: 20px 20px 20px 0px;
   }
   
+
+/* CSS for form */
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[required] {
+    text-decoration: underline;
+  }
+  
+  .form-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form-list li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .form-list li input {
+    font-size: 20px;
+  }
+  
+  .form-list li textarea {
+    font-size: 20px;
+    font-family: "Helvectica", "Arial", sans-serif;
+  }
+  
+  .submit {
+    background-color: #191729;
+    color: white;
+    height: 200%;
+    width: 100%;
+  }
