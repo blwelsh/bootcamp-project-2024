@@ -17,12 +17,11 @@ async function getBlogs() {
 
 }
 
-const blogList = await getBlogs();
 
 
+export default async function Blog(){
 
-export default function Blog(){
-
+    const blogList = await getBlogs();
 
 
     return( 
@@ -30,7 +29,15 @@ export default function Blog(){
             <h1 className="page-title">Blog</h1>
             <div id="blog-container">
                {blogList.map(blog => 
-                <BlogPreview {...blog} key={blog.title} />
+                <BlogPreview 
+                title={blog.title}
+                slug={blog.slug}
+                date={blog.date}
+                description={blog.description}
+                content={blog.content}
+                image={blog.image}
+                imageAlt={blog.imageAlt}
+                {...blog} key={blog.title} />
                )}
             </div> 
         </main>
