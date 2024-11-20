@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-export type Blog = {
+export type BlogObject = {
     title: string;
     slug: string;
     date: Date;
@@ -11,7 +11,7 @@ export type Blog = {
     //comments: IComment[];
 }
 
-const blogSchema = new Schema<Blog>({
+const blogSchema = new Schema<BlogObject>({
     title: { type: String, required: true },
     slug: { type: String, required: true},
     date: { type: Date, required: false, default: new Date()},

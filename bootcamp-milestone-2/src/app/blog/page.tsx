@@ -1,7 +1,7 @@
 import React from "react";
 import BlogPreview from "@/components/blogPreview";
 import connectDB from "@/database/db";
-import BlogModel from "@/database/blogSchema";
+import BlogModel, {BlogObject} from "@/database/blogSchema";
 
 
 async function getBlogs() {
@@ -12,7 +12,7 @@ async function getBlogs() {
         return blogs;
     } catch (err) {
         console.log(err);
-        return null
+        return [];
     }
 
 }
@@ -21,7 +21,7 @@ async function getBlogs() {
 
 export default async function Blog(){
 
-    const blogList = await getBlogs();
+    const blogList: BlogObject[] = await getBlogs();
 
 
     return( 
@@ -37,7 +37,7 @@ export default async function Blog(){
                 content={blog.content}
                 image={blog.image}
                 imageAlt={blog.imageAlt}
-                {...blog} key={blog.title} />
+                 key={blog.title} />
                )}
             </div> 
         </main>

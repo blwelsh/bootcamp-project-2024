@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { Blog } from "@/database/blogSchema";
+import { BlogObject } from "@/database/blogSchema";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: BlogObject) {
 
     // console.log(props);
 
