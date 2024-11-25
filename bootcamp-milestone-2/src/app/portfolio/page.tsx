@@ -1,24 +1,39 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import connectDB from "@/database/db";
+import PortfolioModel, { PortfolioObject }from "@/database/portfolioSchema"; 
+import PortfolioEntry from "@/components/portfolioEntry";
 
-export default function Portfolio() {
+async function getPortfolio() {
+    await connectDB();
+
+    try {
+        const portfolios = await PortfolioModel.find().orFail();
+        return portfolios;
+
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
+export default async function Portfolio() {
+
+    const portfolioList: PortfolioObject[] = await getPortfolio();
+
     return (
         <main>
             <h1 className="page-title">Portfolio</h1>
-            <div className="project">
-                <Link href="/">
-                    <Image src="/brady-pic.JPG" alt="An image of a rocky beach at sunset" width="504" height="378"></Image>
-                </Link>
-
-                <div className="project-details">
-                    <p className="project-name">Brady Welsh - Personal Website</p>
-                    <p className="project-description">A personal website!!</p>
-                    <Link href="/">Learn more!!!</Link>
-                </div>
-
-
-            </div>
+            <div id="portfolio-container">
+               {portfolioList.map(portfolio => 
+                <PortfolioEntry
+                name={portfolio.name}
+                description={portfolio.description}
+                image={portfolio.image}
+                imageAlt={portfolio.imageAlt}
+                url={portfolio.url}
+                 key={portfolio.name} />
+               )}
+            </div> 
 
 
         </main>

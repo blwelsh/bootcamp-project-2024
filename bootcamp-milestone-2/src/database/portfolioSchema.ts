@@ -16,5 +16,5 @@ const portfolioSchema = new Schema<PortfolioObject>({
     url: {type: String, required: true},
 });
 
-const portfolioModel = mongoose.models['portfolios'] || mongoose.model('portfolios', portfolioSchema);
-export default portfolioModel;
+const PortfolioModel = mongoose.models['portfolios'] || mongoose.model('portfolios', portfolioSchema);
+export default PortfolioModel;
