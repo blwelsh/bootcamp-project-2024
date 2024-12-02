@@ -8,8 +8,20 @@ export type BlogObject = {
     content: string;
     image: string;
     imageAlt: string;
-    //comments: IComment[];
+    comments: IComment[];
 }
+
+export type IComment = {
+    user: string;
+    content: string;
+    time: Date;
+}
+
+const commentSchema = new Schema<IComment>({
+    user: {type: String, required: true},
+    content: {type: String, required: true},
+    time: { type: Date, required: true, default: new Date()}
+})
 
 const blogSchema = new Schema<BlogObject>({
     title: { type: String, required: true },
@@ -19,6 +31,7 @@ const blogSchema = new Schema<BlogObject>({
     content: { type: String, required: true },
     image: {type: String, required: true},
     imageAlt: {type: String, required: true},
+    comments: [commentSchema]
 });
 
 const BlogModel = mongoose.models['blogs'] || mongoose.model('blogs', blogSchema);
