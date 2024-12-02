@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import {BlogObject} from "@/database/blogSchema";
+import Comment from "@/components/commentComponent";
 
 
 
@@ -50,8 +51,12 @@ export default async function Blog({ params: {slug} }: Props) {
                 <p>
                     {blog.content}
                 </p>
+            </div>
 
-
+            <div className="blog-comments">
+                {blog.comments.map((comment, index) => (
+                        <Comment key={index} comment={comment} />
+                    ))}
             </div>
 
 
