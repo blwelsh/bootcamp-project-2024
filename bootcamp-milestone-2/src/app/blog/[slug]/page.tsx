@@ -35,7 +35,7 @@ export default async function Blog({ params: {slug} }: Props) {
 
 
 
-    return (
+    return blog != null ? (
         <main>
             <h1 className="page-title">{blog.title}</h1>
 
@@ -53,6 +53,13 @@ export default async function Blog({ params: {slug} }: Props) {
 
 
             </div>
+
+
+        </main>
+    ) : (
+        <main>
+            <h1 className="page-title">404 - Blog Not Found</h1>
+
 
 
         </main>
