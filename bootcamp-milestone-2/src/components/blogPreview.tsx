@@ -9,7 +9,7 @@ export default function BlogPreview(props: BlogObject) {
 
     return (
         <div>
-            <Link href={"/blogs/" + props.slug}><h2> {props.title} </h2></Link>
+            <Link href={"/blog/" + props.slug}><h2> {props.title} </h2></Link>
             <div>
                 <Image src={props.image} alt={props.imageAlt} width={500} height={500}></Image>
                 <p>{props.description}</p>
